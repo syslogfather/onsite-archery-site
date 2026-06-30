@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On Site Archery | Beginner to Tournament Ready in Massachusetts</title>
+<meta name="description" content="On Site Archery welcomes all ages and skill levels. JOAD youth program (ages 8-20) and adult archery for beginners through competitors. Contact Bob to get started.">
+<meta property="og:title" content="On Site Archery | All Skill Levels Welcome">
+<meta property="og:description" content="Youth and adult archery programs in Massachusetts. Registered with USA Archery. All levels welcome.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://onsitearchery.com/">
+<link rel="canonical" href="https://onsitearchery.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:      #111111;
+    --charcoal:   #1c1c1c;
+    --dark:       #242424;
+    --red:        #c0281c;
+    --red-bright: #e03020;
+    --red-deep:   #8f1e14;
+    --blue:       #2d4fc4;
+    --blue-mid:   #3d60d4;
+    --blue-light: #5b7ce0;
+    --cream:      #f5f2ec;
+    --white:      #ffffff;
+    --text-on-dark:   rgba(255,255,255,0.88);
+    --text-muted-dark: rgba(255,255,255,0.52);
+    --text-body:  #2a2a2a;
+    --text-muted: #5a5a58;
+    --border-dark: rgba(255,255,255,0.1);
+    --border-light: rgba(0,0,0,0.1);
+
+    /* Diamond SVG pattern — matches jersey motif */
+    --diamond-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,4 34,20 20,36 6,20' fill='none' stroke='%23ffffff' stroke-width='1' stroke-opacity='0.06'/%3E%3C/svg%3E");
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 2px solid var(--red);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  /* Crossed arrows SVG logo mark */
+  .nav-logomark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .nav-wordmark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .nav-wordmark span { color: var(--red); }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-muted-dark);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: background 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--red-bright) !important; }
+
+  /* Hamburger toggle button (hidden on desktop) */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle span {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 1px;
+    transition: transform 0.25s, opacity 0.2s, top 0.25s;
+  }
+
+  .nav-toggle span:nth-child(1) { top: 13px; }
+  .nav-toggle span:nth-child(2) { top: 19px; }
+  .nav-toggle span:nth-child(3) { top: 25px; }
+
+  .nav-toggle.open span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { top: 19px; transform: rotate(-45deg); }
+
+  /* Mobile dropdown menu */
+  .nav-mobile-panel {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border-bottom: 2px solid var(--red);
+    z-index: 99;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+  }
+
+  .nav-mobile-panel.open { display: block; }
+
+  .nav-mobile-panel ul {
+    list-style: none;
+    padding: 0.5rem 1.5rem 1.5rem;
+  }
+
+  .nav-mobile-panel li { border-bottom: 1px solid var(--border-dark); }
+  .nav-mobile-panel li:last-child { border-bottom: none; margin-top: 0.75rem; }
+
+  .nav-mobile-panel a {
+    display: block;
+    padding: 0.95rem 0;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .nav-mobile-panel li:last-child a {
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.8rem 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--black);
+    background-image: var(--diamond-pattern);
+    color: var(--white);
+    padding: 5.5rem 1.5rem 4.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Red side stripes echoing the jersey panels */
+  .hero::before,
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 6px;
+    background: var(--red);
+  }
+  .hero::before { left: 0; }
+  .hero::after  { right: 0; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(192,40,28,0.18);
+    border: 1px solid rgba(192,40,28,0.4);
+    color: #f5a09a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    color: var(--white);
+  }
+
+  .hero h1 .accent { color: var(--red); }
+  .hero h1 .accent-blue { color: var(--blue-light); }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: var(--text-muted-dark);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .btn-primary:hover { background: var(--red-bright); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border-dark);
+  }
+
+  .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted-dark);
+    font-size: 0.85rem;
+  }
+
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  /* ── SHARED SECTION ── */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 920px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── PROGRAMS ── */
+  .programs { background: var(--white); }
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .program-card {
+    background: var(--cream);
+    border: 1px solid var(--border-light);
+    border-top: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 1.75rem;
+  }
+
+  .program-card.blue-top { border-top-color: var(--blue); }
+  .program-card.dark-top { border-top-color: var(--charcoal); }
+
+  .program-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--black);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+  }
+
+  .program-card.blue-top .program-icon { background: var(--blue); }
+
+  .program-icon svg { color: var(--white); }
+
+  .program-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red-deep);
+    background: rgba(192,40,28,0.1);
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+  }
+
+  .program-card.blue-top .program-tag {
+    color: #1a3490;
+    background: rgba(45,79,196,0.1);
+  }
+
+  .program-card.dark-top .program-tag {
+    color: #333;
+    background: rgba(0,0,0,0.07);
+  }
+
+  .program-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.6rem;
+  }
+
+  .program-card p {
+    font-size: 0.93rem;
+    color: var(--text-body);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .program-detail {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+
+  .program-detail::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+    margin-top: 0.42rem;
+  }
+
+  .program-card.blue-top .program-detail::before { background: var(--blue); }
+  .program-card.dark-top .program-detail::before { background: var(--charcoal); }
+
+  /* ── SCHEDULE TABLE ── */
+  .schedule-wrap {
+    margin-top: 3rem;
+    background: var(--cream);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .schedule-head {
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .schedule-head h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--black);
+    margin-bottom: 0.3rem;
+  }
+
+  .schedule-head p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .schedule-table-scroll {
+    overflow-x: auto;
+  }
+
+  table.schedule-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  table.schedule-table th {
+    text-align: left;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--border-light);
+    background: var(--white);
+    white-space: nowrap;
+  }
+
+  table.schedule-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-body);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  table.schedule-table tr:last-child td { border-bottom: none; }
+
+  table.schedule-table tr:hover td { background: rgba(192,40,28,0.04); }
+
+  .sched-class {
+    font-weight: 700;
+    color: var(--black);
+    white-space: normal !important;
+  }
+
+  .sched-ages {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--red-deep);
+    background: rgba(192,40,28,0.08);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .sched-seats {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--blue);
+  }
+
+  .sched-link {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .sched-link:hover { text-decoration: underline; }
+
+  .schedule-foot {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-light);
+    background: var(--white);
+  }
+
+  @media (max-width: 620px) {
+    .schedule-head { padding: 1.1rem 1.25rem 0.9rem; }
+    .schedule-foot { padding: 0.85rem 1.25rem; }
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--black); background-image: var(--diamond-pattern); }
+
+  .how .section-label { color: var(--blue-light); }
+  .how .section-title { color: var(--white); }
+  .how .section-sub   { color: var(--text-muted-dark); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .step {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-dark);
+    border-top: 3px solid var(--red);
+    border-radius: 6px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .step h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--text-muted-dark);
+    line-height: 1.65;
+  }
+
+  /* ── PIN AWARDS ── */
+  .pins { background: var(--cream); }
+
+  .pin-levels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 2rem;
+  }
+
+  .pin-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-body);
+  }
+
+  .pin-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(0,0,0,0.12);
+  }
+
+  .pins-note {
+    margin-top: 2rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--white);
+    border-radius: 6px;
+    border-left: 4px solid var(--red);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--white); }
+
+  .faq-list {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1.2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.4;
+  }
+
+  .faq-q:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .faq-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: var(--red);
+    transition: transform 0.2s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    display: none;
+    padding-bottom: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--black);
+    background-image: var(--diamond-pattern);
+    text-align: center;
+  }
+
+  .contact .section-label { color: var(--blue-light); }
+  .contact .section-title { color: var(--white); }
+  .contact .section-sub   { color: var(--text-muted-dark); margin: 0 auto; }
+
+  .contact-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border-dark);
+    border-top: 3px solid var(--red);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    max-width: 520px;
+    margin: 2.5rem auto 0;
+  }
+
+  .contact-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-card > p {
+    color: var(--text-muted-dark);
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-dark);
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .contact-method:hover { border-color: var(--red); background: rgba(192,40,28,0.1); }
+
+  .contact-method svg { color: var(--red); flex-shrink: 0; }
+
+  .contact-note {
+    font-size: 0.8rem;
+    color: var(--text-muted-dark);
+  }
+
+  .usa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    background: rgba(45,79,196,0.15);
+    border: 1px solid rgba(45,79,196,0.3);
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    margin-top: 1.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0a0a;
+    border-top: 2px solid var(--red);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.82rem;
+    line-height: 1.75;
+  }
+
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+
+  footer strong { color: rgba(255,255,255,0.85); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 620px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    section { padding: 3.5rem 1.25rem; }
+    .hero { padding: 4rem 1.25rem 3rem; }
+    .steps { grid-template-columns: 1fr; }
+    .contact-card { padding: 1.75rem 1.25rem; }
+  }
+
+  /* ── GALLERY ── */
+  .gallery { background: var(--black); background-image: var(--diamond-pattern); }
+  .gallery .section-label { color: var(--blue-light); }
+  .gallery .section-title { color: var(--white); }
+  .gallery .section-sub   { color: var(--text-muted-dark); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--charcoal);
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item:first-child {
+    aspect-ratio: auto;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s;
+  }
+
+  .gallery-item:hover .gallery-item-overlay { background: rgba(192,40,28,0.25); }
+
+  .gallery-item-overlay svg {
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .gallery-item:hover .gallery-item-overlay svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Caption chips on each photo */
+  .gallery-caption {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.62);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .lb-overlay.active { display: flex; }
+
+  .lb-inner {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lb-img-wrap {
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lb-img-wrap img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+  }
+
+  .lb-caption {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.88rem;
+    text-align: center;
+  }
+
+  .lb-close {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    z-index: 1001;
+  }
+
+  .lb-close:hover { background: rgba(192,40,28,0.5); }
+
+  .lb-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    z-index: 1001;
+  }
+
+  .lb-nav:hover { background: rgba(192,40,28,0.5); }
+  .lb-prev { left: 1rem; }
+  .lb-next { right: 1rem; }
+
+  @media (max-width: 620px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .gallery-item:first-child { grid-column: span 2; }
+    .lb-nav { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="On Site Archery home">
+    <div class="nav-logomark" aria-hidden="true">
+      <!-- OSA crossed arrows mark -->
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arrow 1: top-left to bottom-right -->
+        <line x1="6" y1="6" x2="30" y2="30" stroke="#c0281c" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="30,30 22,28 28,22" fill="#c0281c"/>
+        <polygon points="6,6 14,8 8,14" fill="#c0281c"/>
+        <!-- Arrow 2: top-right to bottom-left -->
+        <line x1="30" y1="6" x2="6" y2="30" stroke="#c0281c" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="6,30 14,28 8,22" fill="#c0281c"/>
+        <polygon points="30,6 22,8 28,14" fill="#c0281c"/>
+      </svg>
+    </div>
+    <div class="nav-wordmark">On Site <span>Archery</span></div>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pins">Pin awards</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile-panel" id="nav-mobile-panel">
+  <ul role="list">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pins">Pin awards</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Get in touch</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="container">
+    <div class="hero-eyebrow" aria-label="Registered Official Club of USA Archery">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Official Club of USA Archery
+    </div>
+
+    <h1>
+      Archery for<br>
+      <span class="accent">every</span> skill level
+    </h1>
+
+    <p class="hero-sub">From picking up a bow for the first time to training for competition. On Site Archery welcomes ages 8 and up in Massachusetts.</p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#programs" class="btn-outline">See our programs</a>
+    </div>
+
+    <div class="hero-badges" aria-label="Key facts">
+      <div class="hero-badge"><span class="dot"></span> All ages welcome</div>
+      <div class="hero-badge"><span class="dot"></span> Equipment provided for class</div>
+      <div class="hero-badge"><span class="dot"></span> Beginner to tournament</div>
+      <div class="hero-badge"><span class="dot"></span> Monthly pin shoots</div>
+    </div>
+  </div>
+</header>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs" aria-labelledby="programs-title">
+  <div class="container">
+    <p class="section-label">Programs</p>
+    <h2 class="section-title" id="programs-title">Something for every archer</h2>
+    <p class="section-sub">Two registered USA Archery programs, built for beginners and experienced archers alike.</p>
+
+    <div class="programs-grid">
+      <article class="program-card">
+        <div class="program-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="program-tag">JOAD Club &middot; Ages 8 to 20</div>
+        <h3>Youth Archery</h3>
+        <p>Our Junior Olympic Archery Development (JOAD) club gives young archers a strong foundation. Two groups based on experience, so every kid trains at the right level.</p>
+        <div class="program-detail">Beginner group for all new youth archers</div>
+        <div class="program-detail">Intermediate and tournament group for advancing archers</div>
+        <div class="program-detail">Beginner start required unless approved by staff</div>
+        <div class="program-detail">Pin achievement awards for measurable progress</div>
+      </article>
+
+      <article class="program-card blue-top">
+        <div class="program-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="program-tag">Adult Archery Program &middot; All Ages</div>
+        <h3>Adult Archery</h3>
+        <p>Our Adult Archery Program (AAP) is open to adults of any experience level. Whether you have never held a bow or want to sharpen your competitive edge, you belong here.</p>
+        <div class="program-detail">Complete beginners always welcome</div>
+        <div class="program-detail">Recreational and competitive training available</div>
+        <div class="program-detail">Equipment provided for class use</div>
+        <div class="program-detail">Pin achievement awards and monthly pin shoots</div>
+      </article>
+
+      <article class="program-card dark-top">
+        <div class="program-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="program-tag">Community Classes</div>
+        <h3>In Your Town</h3>
+        <p>We bring archery to surrounding communities through local recreation departments. Register through your town's recreation website.</p>
+        <div class="program-detail">Classes offered at community locations</div>
+        <div class="program-detail">Contact Bob for school or business programs</div>
+      </article>
+    </div>
+
+    <div class="schedule-wrap">
+      <div class="schedule-head">
+        <h3>Summer session: Saturday classes</h3>
+        <p>July 11 through August 29, 2026. Space is limited, register early.</p>
+      </div>
+      <div class="schedule-table-scroll">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th scope="col">Class</th>
+              <th scope="col">Ages</th>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+              <th scope="col">Fee</th>
+              <th scope="col">Seats</th>
+              <th scope="col">Locations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sched-class">Youth Beginner Archery</td>
+              <td><span class="sched-ages">9 to 16 yrs</span></td>
+              <td>Saturday</td>
+              <td>8:30 to 9:45 AM</td>
+              <td>$180</td>
+              <td><span class="sched-seats">17 seats left</span></td>
+              <td><a href="#" class="sched-link">View locations</a></td>
+            </tr>
+            <tr>
+              <td class="sched-class">Youth Intermediate Archery</td>
+              <td><span class="sched-ages">6 to 12 yrs</span></td>
+              <td>Saturday</td>
+              <td>10:00 to 11:15 AM</td>
+              <td>$180</td>
+              <td><span class="sched-seats">19 seats left</span></td>
+              <td><a href="#" class="sched-link">View locations</a></td>
+            </tr>
+            <tr>
+              <td class="sched-class">Adult Archery</td>
+              <td><span class="sched-ages">18 yrs and up</span></td>
+              <td>Saturday</td>
+              <td>11:30 AM to 12:45 PM</td>
+              <td>$180</td>
+              <td><span class="sched-seats">20 seats left</span></td>
+              <td><a href="#" class="sched-link">View locations</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="schedule-foot">
+        Fees shown are non-resident pricing. Adjustments and discounts may apply at checkout. Seat counts update regularly, contact Bob if a class shows full.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how" aria-labelledby="how-title">
+  <div class="container">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title" id="how-title">Easy to get started</h2>
+    <p class="section-sub">No experience needed. Here is what joining On Site Archery looks like.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" aria-hidden="true">01</div>
+        <h3>Reach out to Bob</h3>
+        <p>Send an email or give us a call. We will answer your questions and help you figure out which program fits best.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3>Start in beginner</h3>
+        <p>New archers start in the beginner program. We provide all equipment for class, so just show up ready to learn.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3>Progress at your pace</h3>
+        <p>As your skills grow, you will learn more advanced techniques. Earn pins, join shoots, and compete when ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <p class="section-label">In action</p>
+    <h2 class="section-title" id="gallery-title">See what we're about</h2>
+    <p class="section-sub">Youth and adults shooting together at outdoor ranges across Massachusetts.</p>
+
+    <div class="gallery-grid" role="list" aria-label="Photo gallery">
+
+      <div class="gallery-item" role="listitem" tabindex="0"
+           data-src="onsite4.jpg"
+           data-caption="Youth archers at an outdoor tournament"
+           aria-label="Open photo: Youth archers at an outdoor tournament">
+        <img src="onsite4.jpg" alt="Young archers aiming bows at an outdoor archery tournament with orange cones marking shooting positions" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="gallery-caption">Tournament day</div>
+      </div>
+
+      <div class="gallery-item" role="listitem" tabindex="0"
+           data-src="onsite1.jpg"
+           data-caption="Adult archer at full draw on an outdoor range"
+           aria-label="Open photo: Adult archer at full draw">
+        <img src="onsite1.jpg" alt="Adult woman drawing a recurve bow at full draw, aiming at a target in an outdoor green field" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="gallery-caption">Adult program</div>
+      </div>
+
+      <div class="gallery-item" role="listitem" tabindex="0"
+           data-src="onsite2.jpg"
+           data-caption="Group of teens shooting together at an outdoor range"
+           aria-label="Open photo: Teen archers at an outdoor range">
+        <img src="onsite2.jpg" alt="Group of teenage archers on a grass field, several drawing recurve bows simultaneously with trees in the background" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="gallery-caption">Youth group</div>
+      </div>
+
+      <div class="gallery-item" role="listitem" tabindex="0"
+           data-src="onsite3.jpg"
+           data-caption="Instructor coaching young beginners on an outdoor range"
+           aria-label="Open photo: Instructor coaching young beginners">
+        <img src="onsite3.jpg" alt="Adult instructor in blue shirt coaching young children with bows on a grass field, with archery targets lined up in the background" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="gallery-caption">Beginner instruction</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <button class="lb-close" id="lb-close" aria-label="Close photo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Next photo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lb-inner">
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+</div>
+
+<!-- PIN AWARDS -->
+<section class="pins" id="pins" aria-labelledby="pins-title">
+  <div class="container">
+    <p class="section-label">Achievement Awards</p>
+    <h2 class="section-title" id="pins-title">Track your progress with pin awards</h2>
+    <p class="section-sub">Both JOAD and adult programs use a pin achievement system. Each pin you earn reflects real progress in your skills.</p>
+
+    <div class="pin-levels" aria-label="Pin achievement levels">
+      <div class="pin-chip"><span class="pin-dot" style="background:#f0f0f0; border-color:#ccc;"></span> White Pin</div>
+      <div class="pin-chip"><span class="pin-dot" style="background:#1a1a1a; border-color:#555;"></span> Black Pin</div>
+      <div class="pin-chip"><span class="pin-dot" style="background:#2d4fc4;"></span> Blue Pin</div>
+      <div class="pin-chip"><span class="pin-dot" style="background:#c0281c;"></span> Red Pin</div>
+      <div class="pin-chip"><span class="pin-dot" style="background:#c8a020;"></span> Gold Pin</div>
+    </div>
+
+    <div class="pins-note">
+      Pin shoots happen every month. All members are encouraged to participate when they feel ready. Pins are earned, not given, and every level is worth celebrating.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Common questions</h2>
+    <p class="section-sub">Still wondering about something? Reach out anytime and Bob will get back to you.</p>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Do I need my own bow and equipment?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">No. We provide equipment for class use, so you can try archery before investing in gear. If you eventually want to compete in tournaments, you will need to own your own equipment.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          What age can my child start?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">Our JOAD program is open to youth ages 8 through 20. All new youth archers start in the beginner group. If you think your child may be ready for the intermediate group, contact us and we can discuss it.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Does my child need to start in the beginner group?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">Yes, with rare exceptions. All youth archers must start in the beginner group unless approved by On Site Archery staff. This ensures every archer builds a safe and solid foundation.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Are you a registered USA Archery club?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">Yes. Both our JOAD Club and our Adult Archery Program are registered members of USA Archery, the national governing body for the sport. Our archers wear it on their jersey.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can adults with no experience join?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">Absolutely. Our Adult Archery Program welcomes adults of all ages and skill levels, including complete beginners. No prior experience is needed to join.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          What if I want to compete in tournaments?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">We encourage archers to participate in tournaments when they feel ready. To compete, you will need to own your own equipment. We will guide you on when and how to make that step.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can you set up a program for my school or organization?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">Yes. If your school, program, or business is interested in setting up an archery class, contact Bob directly. We also offer classes in surrounding communities through local recreation departments.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title" id="contact-title">Ready to get started?</h2>
+    <p class="section-sub">Questions are welcome. Bob will help you figure out the best way to get involved.</p>
+
+    <div class="contact-card">
+      <h3>Reach out to Bob</h3>
+      <p>No pressure, no commitment. Just a friendly conversation about archery.</p>
+      <div class="contact-methods">
+        <a href="mailto:bob@onsitearchery.com" class="contact-method">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          bob@onsitearchery.com
+        </a>
+        <a href="tel:3392341297" class="contact-method">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          339.234.1297
+        </a>
+      </div>
+      <p class="contact-note">We respond to all inquiries. Check your spam folder if you do not hear back within a couple of days.</p>
+      <div class="usa-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Official Club of USA Archery
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <p>
+    <strong>On Site Archery</strong> &middot; Massachusetts<br>
+    <a href="mailto:bob@onsitearchery.com">bob@onsitearchery.com</a> &middot; <a href="tel:3392341297">339.234.1297</a>
+  </p>
+  <p style="margin-top: 0.75rem;">&copy; 2026 On Site Archery. All rights reserved.</p>
+</footer>
+
+
+<script>
+  // ── MOBILE NAV TOGGLE ──
+  (function() {
+    var toggle = document.getElementById('nav-toggle');
+    var panel  = document.getElementById('nav-mobile-panel');
+
+    function closeMenu() {
+      toggle.classList.remove('open');
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }
+
+    function toggleMenu() {
+      var isOpen = panel.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', toggleMenu);
+
+    panel.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+
+<script>
+  // ── GALLERY LIGHTBOX ──
+  (function() {
+    var items = Array.from(document.querySelectorAll('.gallery-item'));
+    var overlay = document.getElementById('lightbox');
+    var lbImg   = document.getElementById('lb-img');
+    var lbCap   = document.getElementById('lb-caption');
+    var current = 0;
+
+    function open(idx) {
+      current = idx;
+      var item = items[idx];
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.querySelector('img').alt;
+      lbCap.textContent = item.dataset.caption || '';
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lb-close').focus();
+    }
+
+    function close() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      items[current].focus();
+    }
+
+    function prev() { open((current - 1 + items.length) % items.length); }
+    function next() { open((current + 1) % items.length); }
+
+    items.forEach(function(item, idx) {
+      item.addEventListener('click', function() { open(idx); });
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(idx); }
+      });
+    });
+
+    document.getElementById('lb-close').addEventListener('click', close);
+    document.getElementById('lb-prev').addEventListener('click', prev);
+    document.getElementById('lb-next').addEventListener('click', next);
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) close();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape')      close();
+      if (e.key === 'ArrowLeft')   prev();
+      if (e.key === 'ArrowRight')  next();
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>
